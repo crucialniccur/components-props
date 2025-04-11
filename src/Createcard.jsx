@@ -20,20 +20,28 @@ function Header(props) {
   );
 }
 
+function Card(props) {
+  console.log(props);
+  return (
+    <div className="card">
+      <h2>{props.title}</h2>
+      {props.children}
+    </div>
+  );
+}
+
 function Homepage() {
   return (
     <main>
-      <div className="card">
-        <h2>Welcome to Petland</h2>
+      <Card title="Welcome to Petland">
         <em>Find dream pet</em>
-      </div>
-      <div className="card">
-        <h2>WHat pets would you like to see?</h2>
+      </Card>
+      <Card title="What pets would you like to see?">
         <div>
           <EmojiButton emoji="😸" label="Cats" />
           <EmojiButton emoji="🐕" label="Dogi" />
         </div>
-      </div>
+      </Card>
     </main>
   );
 }
