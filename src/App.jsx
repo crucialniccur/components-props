@@ -17,7 +17,7 @@ const pets = [
 
 function App() {
   const petCards = pets.map((petObj) => {
-    return <PetCard name={petObj.name} src={petObj.image} />;
+    return <PetCard key={petObj.id} name={petObj.name} src={petObj.image} />;
   });
 
   console.log(petCards);
