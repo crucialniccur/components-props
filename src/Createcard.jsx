@@ -1,38 +1,50 @@
 import React from "react";
 
-const CreateCard = () => {
+function EmojiButton(props) {
+  return (
+    <button>
+      <span role="img">{props.emoji}</span>
+      {props.label}
+    </button>
+  );
+}
+
+function Header(props) {
+  return (
+    <header>
+      <h1>{props.heading}</h1>
+      <nav>
+        <EmojiButton emoji="👤" label="Loginn" />
+      </nav>
+    </header>
+  );
+}
+
+function Homepage() {
+  return (
+    <main>
+      <div className="card">
+        <h2>Welcome to Petland</h2>
+        <em>Find dream pet</em>
+      </div>
+      <div className="card">
+        <h2>WHat pets would you like to see?</h2>
+        <div>
+          <EmojiButton emoji="😸" label="Cats" />
+          <EmojiButton emoji="🐕" label="Dogi" />
+        </div>
+      </div>
+    </main>
+  );
+}
+
+function CreateCard() {
   return (
     <div>
-      <header>
-        <h1>Pet Land</h1>
-        <nav>
-          <button>
-            <span role="img">👤</span>
-            Loginn
-          </button>
-        </nav>
-      </header>
-      <main>
-        <div className="card">
-          <h2>Welcome to Petland</h2>
-          <em>Find dream pet</em>
-        </div>
-        <div className="card">
-          <h2>WHat pets would you like to see?</h2>
-          <div>
-            <button>
-              <span role="img">😸</span>
-              Cats
-            </button>
-            <button>
-              <span role="img">🐕</span>
-              Dogs
-            </button>
-          </div>
-        </div>
-      </main>
+      <Header heading="Pet Landia" />
+      <Homepage />
     </div>
   );
-};
+}
 
 export default CreateCard;
